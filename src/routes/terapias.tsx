@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import onlineImg from "@/assets/dilan-online-session.jpg.asset.json";
+import onlineImg from "@/assets/dilan-online-session-v2.jpg.asset.json";
 import { THERAPIES } from "@/lib/therapies";
 
 export const Route = createFileRoute("/terapias")({
