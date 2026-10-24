@@ -3,56 +3,64 @@ export type Therapy = {
   title: string;
   excerpt: string;
   body: string;
+  topics: string[];
 };
 
 export const THERAPIES: Therapy[] = [
   {
+    slug: "terapia-individual-relaciones",
+    title: "Terapia individual enfocada en las relaciones",
+    excerpt:
+      "Acompañamiento psicológico para adultos que desean trabajar dificultades relacionadas con sus vínculos afectivos.",
+    body: "Se abordan temas como rupturas, infidelidad, dependencia emocional, celos, límites, autoestima dentro de la relación y decisiones sobre continuar o terminar un vínculo. El proceso permite comprender patrones relacionales, elaborar experiencias dolorosas y desarrollar maneras más saludables de relacionarse.",
+    topics: [
+      "Rupturas y decisiones sobre continuar o terminar",
+      "Infidelidad",
+      "Dependencia emocional",
+      "Celos y límites",
+      "Relaciones tóxicas",
+      "Ansiedad y depresión por vínculos amorosos",
+    ],
+  },
+  {
     slug: "terapia-pareja",
     title: "Terapia de pareja",
     excerpt:
-      "Reconstruyan la comunicación, la confianza y la intimidad con un proceso guiado y basado en evidencia.",
-    body: "Un espacio neutral donde ambos pueden ser escuchados. Trabajamos con el modelo Gottman y herramientas de terapia cognitivo conductual para transformar los patrones que han dañado la relación en oportunidades de reconexión.",
+      "Un espacio para trabajar dificultades de comunicación, conflictos recurrentes, infidelidad, pérdida de confianza y desconexión emocional.",
+    body: "Se ayuda a cada integrante a comprender sus dinámicas, expresar sus necesidades y desarrollar herramientas para manejar las diferencias y fortalecer el vínculo.",
+    topics: [
+      "Comunicación de pareja",
+      "Conflictos recurrentes",
+      "Infidelidad y pérdida de confianza",
+      "Desconexión emocional",
+      "Decisiones sobre el futuro de la relación",
+      "Separación y divorcio con mediación",
+    ],
   },
   {
-    slug: "terapia-individual",
-    title: "Terapia individual",
+    slug: "terapia-sexual",
+    title: "Terapia sexual",
     excerpt:
-      "Un acompañamiento personal para comprender tus emociones, tus vínculos y tus decisiones.",
-    body: "Sesiones uno a uno en línea para trabajar ansiedad, autoestima, duelo o cualquier proceso personal, siempre desde un enfoque humano, cálido y científico.",
+      "Atención a personas y parejas que presentan preocupaciones relacionadas con el deseo sexual, la intimidad, la conexión erótica y el funcionamiento sexual.",
+    body: "El proceso considera los aspectos emocionales, personales y relacionales de la sexualidad, en un espacio de respeto y absoluta confidencialidad.",
+    topics: [
+      "Deseo sexual",
+      "Intimidad y conexión erótica",
+      "Funcionamiento sexual",
+      "Sexualidad en la relación de pareja",
+    ],
   },
   {
-    slug: "infidelidad",
-    title: "Infidelidad",
+    slug: "conferencias-talleres",
+    title: "Conferencias y talleres",
     excerpt:
-      "Un camino estructurado para sanar la traición, decidir el futuro de la relación y recuperar la confianza.",
-    body: "La infidelidad no tiene que ser el final. Con un proceso cuidadoso y confidencial, ayudamos a la pareja a procesar el dolor, comprender lo ocurrido y decidir, con claridad, si desean reconstruir juntos.",
-  },
-  {
-    slug: "dependencia-emocional",
-    title: "Dependencia emocional",
-    excerpt:
-      "Aprende a relacionarte desde el amor propio, no desde el miedo a la separación.",
-    body: "Exploramos el origen de la dependencia emocional y desarrollamos herramientas para construir vínculos más sanos, donde el cariño no signifique perderse a uno mismo.",
-  },
-  {
-    slug: "relaciones-toxicas",
-    title: "Relaciones tóxicas",
-    excerpt:
-      "Identifica los patrones que te hacen daño y recupera el control de tu bienestar emocional.",
-    body: "Reconocer una relación tóxica no siempre es sencillo. Ofrecemos claridad, herramientas prácticas y apoyo profesional para establecer límites sanos y tomar decisiones que protejan tu salud emocional.",
-  },
-  {
-    slug: "separacion-divorcio",
-    title: "Separación y divorcio",
-    excerpt:
-      "Atraviesa el proceso de separación con acompañamiento profesional y mediación certificada.",
-    body: "Como mediadora certificada, acompaño a las parejas en el proceso de separación o divorcio de forma respetuosa, reduciendo el conflicto y priorizando el bienestar de todos los involucrados, incluidos los hijos.",
-  },
-  {
-    slug: "ansiedad-depresion",
-    title: "Ansiedad y depresión por vínculos amorosos",
-    excerpt:
-      "Cuando el amor duele: tratamiento para la ansiedad y la depresión nacidas de las relaciones.",
-    body: "Las heridas del corazón también afectan la mente. Tratamos la ansiedad y la depresión que surgen de vínculos amorosos difíciles, combinando terapia cognitivo conductual con un enfoque constructivista.",
+      "Actividades educativas sobre relaciones de pareja, comunicación, salud mental, sexualidad, límites y bienestar emocional.",
+    body: "Dirigidas a organizaciones, instituciones y grupos, adaptadas a las necesidades de cada audiencia.",
+    topics: [
+      "Relaciones de pareja y comunicación",
+      "Salud mental",
+      "Sexualidad",
+      "Límites y bienestar emocional",
+    ],
   },
 ];
