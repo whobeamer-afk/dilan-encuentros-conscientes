@@ -2,14 +2,11 @@ import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 
-import logoBadge from "@/assets/dilan-logo-badge.png.asset.json";
-
 const NAV = [
-  { to: "/" as const, label: "Inicio" },
   { to: "/sobre-mi" as const, label: "Sobre mí" },
   { to: "/terapias" as const, label: "Terapias" },
+  { to: "/videolibro" as const, label: "Videolibro" },
   { to: "/citas" as const, label: "Citas" },
-  { to: "/cursos" as const, label: "Cursos" },
   { to: "/contacto" as const, label: "Contacto" },
 ];
 
@@ -25,25 +22,18 @@ export function SiteHeader() {
     }`;
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6 md:py-4">
+    <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 md:py-5">
         <Link
           to="/"
-          className="flex min-w-0 items-center gap-3"
+          className="flex min-w-0 items-baseline gap-3"
           onClick={() => setOpen(false)}
         >
-          <img
-            src={logoBadge.url}
-            alt="Insignia de Dra. Gretchelle Dilán"
-            className="h-11 w-11 shrink-0 rounded-full"
-          />
-          <span className="min-w-0">
-            <span className="block truncate font-serif text-lg leading-tight text-foreground sm:text-xl">
-              Dra. Gretchelle Dilán, Ph.D.
-            </span>
-            <span className="block text-[0.6rem] uppercase tracking-[0.28em] text-muted-foreground">
-              Psicóloga · Sexóloga
-            </span>
+          <span className="truncate font-serif text-lg tracking-[0.35em] text-foreground sm:text-xl">
+            PSICOANALIZAR
+          </span>
+          <span className="hidden text-[0.6rem] uppercase tracking-[0.22em] text-muted-foreground lg:inline">
+            Dra. Gretchelle Dilán
           </span>
         </Link>
 
@@ -59,9 +49,9 @@ export function SiteHeader() {
           ))}
           <Link
             to="/citas"
-            className="rounded-sm bg-primary px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground transition-colors hover:bg-primary/90"
+            className="rounded-full bg-foreground px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-background transition-opacity hover:opacity-85"
           >
-            Agendar cita
+            Agenda tu cita
           </Link>
         </nav>
 
@@ -76,7 +66,7 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="border-t border-border bg-background px-4 py-4 md:hidden">
+        <nav className="border-t border-border bg-background px-4 py-5 md:hidden">
           <ul className="flex flex-col gap-4">
             {NAV.map((item) => (
               <li key={item.to}>
@@ -92,10 +82,10 @@ export function SiteHeader() {
             <li>
               <Link
                 to="/citas"
-                className="inline-block rounded-sm bg-primary px-5 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-primary-foreground"
+                className="inline-block rounded-full bg-foreground px-6 py-2.5 text-[0.7rem] uppercase tracking-[0.2em] text-background"
                 onClick={() => setOpen(false)}
               >
-                Agendar cita
+                Agenda tu cita
               </Link>
             </li>
           </ul>

@@ -1,22 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { Check } from "lucide-react";
 
-import onlineImg from "@/assets/dilan-online-session-v2.jpg.asset.json";
+import glassesImg from "@/assets/dilan-glasses.jpg.asset.json";
 import { THERAPIES } from "@/lib/therapies";
 
 export const Route = createFileRoute("/terapias")({
   head: () => ({
     meta: [
-      { title: "Terapias | Dra. Gretchelle Dilán, Ph.D." },
+      { title: "Terapias | Psicoanalizar · Dra. Gretchelle Dilán, Ph.D." },
       {
         name: "description",
         content:
-          "Terapia de pareja, terapia individual, infidelidad, dependencia emocional, relaciones tóxicas, separación y divorcio, y ansiedad por vínculos amorosos.",
+          "Terapia individual enfocada en las relaciones, terapia de pareja, terapia sexual, y conferencias y talleres. Servicios exclusivamente en línea para adultos en Puerto Rico.",
       },
-      { property: "og:title", content: "Terapias | Dra. Gretchelle Dilán, Ph.D." },
+      {
+        property: "og:title",
+        content: "Terapias | Psicoanalizar · Dra. Gretchelle Dilán, Ph.D.",
+      },
       {
         property: "og:description",
         content:
-          "Áreas de acompañamiento psicológico: pareja, individual, infidelidad y más. Sesiones en línea.",
+          "Terapia individual y de pareja enfocada en las relaciones, terapia sexual y actividades educativas. Sesiones en línea.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -37,21 +41,24 @@ function Terapias() {
             Un espacio para cada proceso
           </h1>
           <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
-            Todas las sesiones son en línea, confidenciales y se adaptan a tu
-            ritmo. Trabajo con terapia cognitivo conductual y terapias
-            contemporáneas con bases constructivistas.
+            Todas las sesiones son en línea y confidenciales. En la práctica se
+            integra la terapia cognitivo-conductual, la Terapia de Aceptación y
+            Compromiso (ACT), el enfoque constructivista y principios de la
+            Terapia Relacional Imago.
           </p>
           <Link
             to="/citas"
             className="mt-8 inline-block rounded-sm bg-primary px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Agendar cita
+            Agenda tu cita
           </Link>
         </div>
         <img
-          src={onlineImg.url}
-          alt="Sesión de terapia en línea por videollamada"
+          src={glassesImg.url}
+          alt="La Dra. Gretchelle Dilán con sus lentes en la mano, en su consultorio"
           loading="lazy"
+          width={853}
+          height={1280}
           className="w-full object-cover"
         />
       </section>
@@ -71,9 +78,20 @@ function Terapias() {
             <p className="mt-4 text-lg italic leading-relaxed text-muted-foreground">
               {t.excerpt}
             </p>
-            <p className="mt-3 leading-relaxed text-muted-foreground">
-              {t.body}
-            </p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">{t.body}</p>
+            {t.topics.length > 0 && (
+              <ul className="mt-6 grid gap-2.5 sm:grid-cols-2">
+                {t.topics.map((topic) => (
+                  <li
+                    key={topic}
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
+                  >
+                    <Check className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
+                    <span>{topic}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
           </article>
         ))}
       </section>
@@ -84,14 +102,14 @@ function Terapias() {
             ¿No sabes por dónde empezar?
           </h2>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            En la primera sesión exploramos juntos lo que necesitas y
-            definimos el mejor camino para ti o para su relación.
+            En la primera sesión exploramos juntos lo que necesitas y definimos
+            el mejor camino para ti o para tu relación.
           </p>
           <Link
             to="/citas"
             className="mt-8 inline-block rounded-sm bg-primary px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Agendar cita
+            Agenda tu cita
           </Link>
         </div>
       </section>

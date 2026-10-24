@@ -1,229 +1,256 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, MessageCircle, Quote } from "lucide-react";
 
-import heroImg from "@/assets/dilan-hero.jpg.asset.json";
-import aboutImg from "@/assets/dilan-seated-plants.jpg.asset.json";
-import officeImg from "@/assets/consultorio.jpg.asset.json";
+import heroImg from "@/assets/dilan-hero-2026.jpg.asset.json";
+import aboutImg from "@/assets/dilan-seated.jpg.asset.json";
+import videolibroImg from "@/assets/dilan-reading.jpg.asset.json";
 import { BookingCard } from "@/components/booking-card";
-import { NotifySignup } from "@/components/notify-signup";
 import { WHATSAPP_URL } from "@/components/site-footer";
 import { THERAPIES } from "@/lib/therapies";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      {
-        title: "Dra. Gretchelle Dilán, Ph.D. | Psicóloga y sexóloga · Terapia de pareja",
-      },
+      { title: "Psicoanalizar | Dra. Gretchelle Dilán, Ph.D." },
       {
         name: "description",
         content:
-          "Terapia de pareja en línea con la Dra. Gretchelle Dilán, Ph.D.: psicóloga y sexóloga en Ponce, Puerto Rico. Enfoque humano y científico, 17 años de consulta en línea.",
+          "Terapia individual y de pareja enfocada en las relaciones. Psicóloga y sexóloga en Puerto Rico, servicios exclusivamente en línea. Comprender tus vínculos, encontrar tu voz, elegir tu camino.",
       },
       {
         property: "og:title",
-        content: "Dra. Gretchelle Dilán, Ph.D. | Terapia de pareja",
+        content: "Psicoanalizar | Dra. Gretchelle Dilán, Ph.D.",
       },
       {
         property: "og:description",
         content:
-          "Terapia de pareja con enfoque humano y científico. Sesiones en línea desde Ponce, Puerto Rico.",
+          "Terapia individual y de pareja enfocada en las relaciones. Servicios exclusivamente en línea, Puerto Rico.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
-  component: Index,
+  component: Home,
 });
 
 const CREDENTIALS = [
+  "≈ 20 años de experiencia",
   "Doctorado en Psicología",
-  "Post grado en Sexualidad, Universidad de Barcelona",
-  "Certificación Gottman nivel 3",
+  "Posgrado en Sexología · Universidad de Barcelona",
+  "Método Gottman · Niveles 1, 2 y 3",
+  "Mediadora y árbitro del Tribunal de Puerto Rico",
   "Licenciada por la Junta Examinadora de Psicólogos de PR",
-  "Mediadora certificada, Tribunal General de Justicia de PR",
-  "17 años de consulta en línea",
+  "Servicios únicamente en línea para adultos en Puerto Rico",
 ];
 
-function Index() {
+const STEPS = [
+  {
+    n: "01",
+    t: "Agenda tu cita",
+    d: "Lee la información de Citas y contáctanos por WhatsApp para coordinar fechas y horarios disponibles para tu primera sesión.",
+  },
+  {
+    n: "02",
+    t: "Primera sesión en línea",
+    d: "Te conectas desde un espacio privado por la plataforma segura del consultorio, quince minutos antes de tu primera cita.",
+  },
+  {
+    n: "03",
+    t: "Plan terapéutico",
+    d: "Cada caso se evalúa para determinar recomendaciones y necesidades particulares de tratamiento, individual o de pareja.",
+  },
+];
+
+const TESTIMONIALS = [
+  {
+    quote:
+      "Aprendimos a hablarnos sin lastimarnos. Hoy discutimos de otra manera, y sobre todo, escuchamos de otra manera.",
+    a: "Pareja en terapia · testimonio ilustrativo",
+  },
+  {
+    quote:
+      "Llegué sin saber si quería quedarme o irme. Me dio un espacio para pensarlo con claridad, sin presión, y tomar mi propia decisión.",
+    a: "Terapia individual · testimonio ilustrativo",
+  },
+  {
+    quote:
+      "Después de la infidelidad pensé que todo había terminado. Reconstruimos la confianza paso a paso, con un proceso claro y respetuoso.",
+    a: "Pareja en terapia · testimonio ilustrativo",
+  },
+];
+
+function Home() {
   return (
     <div>
-      {/* 1 · Hero */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 pt-10 sm:px-6 md:grid-cols-[1fr_0.9fr] md:gap-16 md:pb-24 md:pt-16">
-        <div className="order-2 md:order-1">
-          <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
-            Psicología · Sexualidad · Pareja
-          </p>
-          <h1 className="mt-5 font-serif text-4xl leading-[1.15] text-foreground sm:text-5xl lg:text-6xl">
-            Terapia de pareja con enfoque humano y científico
-          </h1>
-          <p className="mt-6 max-w-lg text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Soy la Dra. Gretchelle Dilán, psicóloga y sexóloga. Acompaño a
-            parejas y personas a reconstruir sus vínculos desde Ponce, Puerto
-            Rico, con sesiones en línea para todo el mundo.
-          </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <Link
-              to="/citas"
-              className="rounded-sm bg-primary px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-primary/90"
-            >
-              Agendar cita
-            </Link>
-            <Link
-              to="/sobre-mi"
-              className="rounded-sm border border-foreground/30 px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-foreground"
-            >
-              Conocer más
-            </Link>
+      {/* Hero */}
+      <section className="relative overflow-hidden">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-12 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:pb-14 md:pt-20">
+          <div className="max-w-xl">
+            <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
+              Dra. Gretchelle Dilán · Psicóloga
+            </p>
+            <h1 className="mt-5 font-serif text-4xl leading-[1.15] sm:text-5xl md:text-[3.4rem]">
+              Comprender tus vínculos. Encontrar tu voz. Elegir tu camino.
+            </h1>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
+              Terapia individual y de pareja enfocada en las relaciones.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link
+                to="/terapias"
+                className="rounded-sm bg-foreground px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-background transition-opacity hover:opacity-85"
+              >
+                Conoce mis servicios
+              </Link>
+              <Link
+                to="/videolibro"
+                className="rounded-sm border border-border px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-primary/60"
+              >
+                Lee mis escritos
+              </Link>
+            </div>
+            <p className="mt-7 text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+              Únicamente en línea · Puerto Rico
+            </p>
           </div>
-        </div>
-        <div className="order-1 md:order-2">
-          <div className="relative mx-auto max-w-md md:max-w-none">
-            <div className="absolute -right-3 -top-3 h-full w-full border border-primary/40" />
+
+          <div className="relative">
             <img
               src={heroImg.url}
-              alt="Dra. Gretchelle Dilán, psicóloga y sexóloga"
-              className="relative w-full object-cover"
+              alt="Retrato de la Dra. Gretchelle Dilán"
+              width={520}
+              height={640}
+              className="w-full max-w-md justify-self-center object-cover md:max-w-none"
+            />
+            {/* fundido del fondo gris del estudio hacia el fondo de la página */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/40 to-transparent md:-left-16 md:w-2/5"
             />
           </div>
         </div>
       </section>
 
-      {/* 2 · Credentials strip */}
-      <section className="bg-secondary py-8">
-        <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-center gap-x-6 gap-y-3 px-4 text-center sm:px-6">
-          {CREDENTIALS.map((c, i) => (
-            <span key={c} className="flex items-center gap-6">
-              <span className="text-[0.7rem] uppercase tracking-[0.18em] text-secondary-foreground/80">
-                {c}
-              </span>
-              {i < CREDENTIALS.length - 1 && (
-                <span aria-hidden className="text-primary">
-                  ·
-                </span>
-              )}
-            </span>
-          ))}
-        </div>
+      {/* Desde mi consultorio */}
+      <section className="mx-auto max-w-3xl px-4 pb-14 pt-4 text-center sm:px-6">
+        <p className="text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">
+          Desde mi consultorio
+        </p>
+        <p className="mt-4 font-serif text-2xl leading-snug text-foreground sm:text-3xl">
+          Un espacio para pensar nuestras relaciones.
+        </p>
       </section>
 
-      {/* 3 · About intro */}
+      {/* Credenciales */}
+      <section className="border-y border-border bg-secondary">
+        <ul className="mx-auto flex max-w-6xl flex-wrap justify-center gap-x-8 gap-y-3 px-4 py-6 text-[0.7rem] uppercase tracking-[0.18em] text-muted-foreground sm:px-6">
+          {CREDENTIALS.map((c) => (
+            <li key={c} className="flex items-center gap-2">
+              <span aria-hidden className="text-primary">
+                ·
+              </span>
+              {c}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {/* Sobre mí — intro */}
       <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:gap-16 md:py-24">
         <img
           src={aboutImg.url}
-          alt="Dra. Gretchelle Dilán en su consultorio"
+          alt="La Dra. Gretchelle Dilán sentada en su consultorio"
           loading="lazy"
+          width={853}
+          height={1280}
           className="w-full object-cover"
         />
         <div>
           <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
             Sobre mí
           </p>
-          <h2 className="mt-4 font-serif text-3xl leading-snug sm:text-4xl">
-            Una terapeuta con raíces en Ponce y una práctica sin fronteras
+          <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">
+            Una psicóloga que escucha cómo amas
           </h2>
           <p className="mt-6 leading-relaxed text-muted-foreground">
-            Desde Ponce, Puerto Rico, ofrezco sesiones de terapia en línea
-            hace 17 años. Mi trabajo combina la ciencia de la psicología con
-            una mirada profundamente humana sobre las relaciones.
+            La Dra. Gretchelle Dilán es psicóloga, sexóloga y terapeuta
+            individual y de pareja con aproximadamente 20 años de experiencia.
+            Cuenta con un doctorado en Psicología, formación de posgrado en
+            Sexología de la Universidad de Barcelona y formación en los niveles
+            1, 2 y 3 del Método Gottman. También es mediadora y árbitro del
+            Tribunal de Puerto Rico.
           </p>
           <p className="mt-4 leading-relaxed text-muted-foreground">
-            Además de mi consulta privada, soy profesora universitaria,
-            investigadora y mediadora certificada. Cada sesión refleja esa
-            triple experiencia: académica, clínica y humana.
+            Desde Psicoanalizar, acompaña a personas y parejas a comprender sus
+            dinámicas relacionales, mejorar la comunicación, afrontar la
+            infidelidad y tomar decisiones sobre sus relaciones. Ofrece
+            servicios exclusivamente en línea para adultos que se encuentran en
+            Puerto Rico.
           </p>
           <Link
             to="/sobre-mi"
-            className="mt-6 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:text-primary/80"
+            className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:text-primary/80"
           >
             Conoce mi historia
-            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </section>
 
-      {/* 4 · Approach pull quote */}
-      <section className="bg-secondary/60 py-16 md:py-24">
-        <div className="mx-auto max-w-3xl px-4 text-center sm:px-6">
-          <Quote aria-hidden className="mx-auto h-8 w-8 text-primary/50" />
-          <blockquote className="mt-6 font-serif text-2xl italic leading-relaxed text-foreground sm:text-3xl md:text-4xl">
+      {/* Enfoque — pull quote */}
+      <section className="bg-foreground py-16 text-background md:py-20">
+        <div className="mx-auto max-w-4xl px-4 text-center sm:px-6">
+          <p className="font-serif text-2xl italic leading-snug sm:text-3xl md:text-4xl">
             “Terapia cognitivo conductual y terapias contemporáneas con bases
-            constructivistas”
-          </blockquote>
-          <p className="mt-6 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
-            El enfoque de la Dra. Dilán
+            constructivistas.”
+          </p>
+          <p className="mt-6 text-[0.7rem] uppercase tracking-[0.3em] text-background/60">
+            El enfoque del consultorio
           </p>
         </div>
       </section>
 
-      {/* 5 · Therapies */}
+      {/* Servicios */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
         <div className="max-w-2xl">
           <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
-            Terapias
+            Servicios
           </p>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
-            Áreas de acompañamiento
+          <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">
+            Un espacio para cada proceso
           </h2>
-          <p className="mt-4 leading-relaxed text-muted-foreground">
-            Cada proceso terapéutico se diseña a la medida de tu historia y
-            tus metas.
-          </p>
         </div>
-        <div className="mt-12 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
-          {THERAPIES.map((t, i) => (
-            <Link
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {THERAPIES.map((t) => (
+            <article
               key={t.slug}
-              to="/terapias"
-              className="group bg-card p-8 transition-colors hover:bg-secondary/50"
+              className="flex flex-col border border-border bg-card p-6"
             >
-              <p className="font-serif text-sm text-primary">
-                {String(i + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-3 font-serif text-xl leading-snug">
-                {t.title}
-              </h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+              <h3 className="font-serif text-xl leading-snug">{t.title}</h3>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
                 {t.excerpt}
               </p>
-              <span className="mt-5 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.25em] text-primary opacity-0 transition-opacity group-hover:opacity-100">
-                Ver más <ArrowRight className="h-3.5 w-3.5" />
-              </span>
-            </Link>
+              <Link
+                to="/terapias"
+                className="mt-5 text-[0.65rem] uppercase tracking-[0.25em] text-primary transition-colors hover:text-primary/80"
+              >
+                Leer más
+              </Link>
+            </article>
           ))}
         </div>
       </section>
 
-      {/* 6 · How it works */}
-      <section className="mx-auto max-w-6xl px-4 pb-16 sm:px-6 md:pb-24">
-        <div className="border-y border-border py-16">
-          <h2 className="text-center font-serif text-3xl sm:text-4xl">
+      {/* Cómo funciona */}
+      <section className="bg-secondary py-16 md:py-24">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center font-serif text-3xl leading-tight sm:text-4xl">
             Cómo funciona
           </h2>
-          <div className="mt-12 grid gap-10 sm:grid-cols-3">
-            {[
-              {
-                n: "1",
-                t: "Agenda tu cita",
-                d: "Elige el tipo de sesión, la fecha y la hora que prefieras desde esta página.",
-              },
-              {
-                n: "2",
-                t: "Primera sesión en línea",
-                d: "Nos encontramos por videollamada desde donde estés, en un espacio seguro y confidencial.",
-              },
-              {
-                n: "3",
-                t: "Plan terapéutico",
-                d: "Diseñamos juntas un plan con metas claras y pasos concretos para tu proceso.",
-              },
-            ].map((s) => (
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
+            {STEPS.map((s) => (
               <div key={s.n} className="text-center">
-                <p className="font-serif text-5xl italic text-primary/70">
-                  {s.n}
-                </p>
+                <p className="font-serif text-4xl text-primary">{s.n}</p>
                 <h3 className="mt-4 font-serif text-xl">{s.t}</h3>
-                <p className="mx-auto mt-3 max-w-xs text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
                   {s.d}
                 </p>
               </div>
@@ -232,98 +259,115 @@ function Index() {
         </div>
       </section>
 
-      {/* 7 · Booking */}
-      <section className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-16 sm:px-6 md:grid-cols-2 md:gap-16 md:pb-24">
+      {/* Agenda */}
+      <section className="mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:gap-16 md:py-24">
         <div>
           <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
             Citas
           </p>
-          <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
-            Reserva tu espacio hoy
+          <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">
+            Agenda tu cita
           </h2>
-          <p className="mt-5 max-w-md leading-relaxed text-muted-foreground">
-            Con 17 años de consulta en línea, agendar es sencillo: elige tu
-            sesión, tu fecha y tu hora, y te espero en un espacio cálido y
-            confidencial.
+          <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
+            El consultorio atiende únicamente en línea, mediante
+            telepsicología, con una plataforma segura bajo la ley HIPAA. Antes
+            de reservar, te invito a leer la información completa sobre la
+            modalidad, los documentos, los costos y las cancelaciones.
           </p>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-7 inline-flex items-center gap-2 rounded-sm border border-foreground/30 px-6 py-3 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-foreground"
-          >
-            <MessageCircle className="h-4 w-4" />
-            WhatsApp +1 (787) 409-1516
-          </a>
+          <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+            <li>Sesión individual: $75 · 55 minutos</li>
+            <li>Sesión de pareja: $95 · 1 hora y 20 minutos</li>
+            <li>WhatsApp +1 (787) 409-1516</li>
+          </ul>
         </div>
-        <BookingCard />
+        <BookingCard compact />
       </section>
 
-      {/* 8 · Courses */}
-      <section className="bg-secondary py-16 md:py-24">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 md:gap-16">
+      {/* Videolibro */}
+      <section className="border-y border-border bg-secondary">
+        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:grid-cols-2 md:gap-16 md:py-24">
           <img
-            src={officeImg.url}
-            alt="Consultorio cálido y acogedor"
+            src={videolibroImg.url}
+            alt="La Dra. Gretchelle Dilán leyendo, con su collar de destellos rosa"
             loading="lazy"
-            width={1024}
-            height={1024}
+            width={853}
+            height={1280}
             className="w-full object-cover"
           />
-          <div className="text-center md:text-left">
+          <div>
             <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
-              Cursos
+              Videolibro
             </p>
-            <h2 className="mt-4 font-serif text-3xl sm:text-4xl">
-              Próximamente
+            <h2 className="mt-4 font-serif text-3xl leading-tight sm:text-4xl">
+              ¿Me quedo o me voy de la relación?
             </h2>
-            <p className="mt-4 leading-relaxed text-muted-foreground">
-              Estoy preparando cursos en línea sobre relaciones sanas,
-              comunicación de pareja y bienestar emocional. Déjame tu correo
-              y serás la primera persona en enterarte.
+            <p className="mt-6 max-w-lg leading-relaxed text-muted-foreground">
+              Un recurso de siete capítulos para reflexionar sobre la relación,
+              reconocer las dificultades que se están viviendo y explorar los
+              factores que influyen en la decisión de quedarse o irse.
             </p>
-            <div className="mt-6">
-              <NotifySignup />
-            </div>
+            <Link
+              to="/videolibro"
+              className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:text-primary/80"
+            >
+              Conocer el videolibro
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 9 · Testimonials */}
+      {/* Testimonios */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 md:py-24">
-        <h2 className="text-center font-serif text-3xl sm:text-4xl">
-          Lo que dicen mis consultantes
+        <h2 className="text-center font-serif text-3xl leading-tight sm:text-4xl">
+          Lo que dicen en sesión
         </h2>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {[
-            {
-              q: "Aprendimos a hablarnos de nuevo. La terapia nos devolvió la calma y la esperanza.",
-              a: "Pareja en terapia · Ponce, PR",
-            },
-            {
-              q: "Por primera vez alguien me explicó qué me pasaba sin juzgarme. Ese fue el comienzo de mi cambio.",
-              a: "Terapia individual · Consulta en línea",
-            },
-            {
-              q: "Después de la infidelidad pensé que todo estaba perdido. Hoy tenemos una relación más honesta que nunca.",
-              a: "Pareja en terapia · Consulta en línea",
-            },
-          ].map((t) => (
-            <figure key={t.a} className="border border-border bg-card p-8">
-              <Quote aria-hidden className="h-5 w-5 text-primary/60" />
-              <blockquote className="mt-4 font-serif text-lg italic leading-relaxed text-foreground">
-                “{t.q}”
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {TESTIMONIALS.map((t) => (
+            <figure
+              key={t.quote}
+              className="border border-border bg-card p-7"
+            >
+              <blockquote className="font-serif text-lg italic leading-relaxed text-foreground">
+                “{t.quote}”
               </blockquote>
-              <figcaption className="mt-5 text-[0.65rem] uppercase tracking-[0.25em] text-muted-foreground">
+              <figcaption className="mt-5 text-[0.65rem] uppercase tracking-[0.22em] text-muted-foreground">
                 {t.a}
               </figcaption>
             </figure>
           ))}
         </div>
-        <p className="mt-8 text-center text-xs text-muted-foreground">
-          Testimonios ilustrativos — se sustituirán por testimonios reales con
-          consentimiento de cada consultante.
+        <p className="mt-6 text-center text-xs text-muted-foreground">
+          Testimonios ilustrativos, anónimos y confidenciales.
         </p>
+      </section>
+
+      {/* CTA final */}
+      <section className="bg-secondary py-16 text-center md:py-20">
+        <div className="mx-auto max-w-xl px-4 sm:px-6">
+          <h2 className="font-serif text-3xl sm:text-4xl">
+            ¿Lista o listo para comenzar?
+          </h2>
+          <p className="mt-4 leading-relaxed text-muted-foreground">
+            Escríbeme y coordinamos fechas y horarios disponibles para tu
+            primera cita.
+          </p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <Link
+              to="/citas"
+              className="rounded-sm bg-primary px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-primary/90"
+            >
+              Información de citas
+            </Link>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-sm border border-border bg-background px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-primary/60"
+            >
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
       </section>
     </div>
   );

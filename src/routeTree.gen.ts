@@ -12,9 +12,9 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as CitasRouteImport } from './routes/citas'
 import { Route as ContactoRouteImport } from './routes/contacto'
-import { Route as CursosRouteImport } from './routes/cursos'
 import { Route as SobreMiRouteImport } from './routes/sobre-mi'
 import { Route as TerapiasRouteImport } from './routes/terapias'
+import { Route as VideolibroRouteImport } from './routes/videolibro'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -31,11 +31,6 @@ const ContactoRoute = ContactoRouteImport.update({
   path: '/contacto',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CursosRoute = CursosRouteImport.update({
-  id: '/cursos',
-  path: '/cursos',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SobreMiRoute = SobreMiRouteImport.update({
   id: '/sobre-mi',
   path: '/sobre-mi',
@@ -46,55 +41,60 @@ const TerapiasRoute = TerapiasRouteImport.update({
   path: '/terapias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const VideolibroRoute = VideolibroRouteImport.update({
+  id: '/videolibro',
+  path: '/videolibro',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/citas': typeof CitasRoute
   '/contacto': typeof ContactoRoute
-  '/cursos': typeof CursosRoute
   '/sobre-mi': typeof SobreMiRoute
   '/terapias': typeof TerapiasRoute
+  '/videolibro': typeof VideolibroRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/citas': typeof CitasRoute
   '/contacto': typeof ContactoRoute
-  '/cursos': typeof CursosRoute
   '/sobre-mi': typeof SobreMiRoute
   '/terapias': typeof TerapiasRoute
+  '/videolibro': typeof VideolibroRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/citas': typeof CitasRoute
   '/contacto': typeof ContactoRoute
-  '/cursos': typeof CursosRoute
   '/sobre-mi': typeof SobreMiRoute
   '/terapias': typeof TerapiasRoute
+  '/videolibro': typeof VideolibroRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/citas' | '/contacto' | '/cursos' | '/sobre-mi' | '/terapias'
+    '/' | '/citas' | '/contacto' | '/sobre-mi' | '/terapias' | '/videolibro'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/citas' | '/contacto' | '/cursos' | '/sobre-mi' | '/terapias'
+  to: '/' | '/citas' | '/contacto' | '/sobre-mi' | '/terapias' | '/videolibro'
   id:
     | '__root__'
     | '/'
     | '/citas'
     | '/contacto'
-    | '/cursos'
     | '/sobre-mi'
     | '/terapias'
+    | '/videolibro'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CitasRoute: typeof CitasRoute
   ContactoRoute: typeof ContactoRoute
-  CursosRoute: typeof CursosRoute
   SobreMiRoute: typeof SobreMiRoute
   TerapiasRoute: typeof TerapiasRoute
+  VideolibroRoute: typeof VideolibroRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -120,13 +120,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactoRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/cursos': {
-      id: '/cursos'
-      path: '/cursos'
-      fullPath: '/cursos'
-      preLoaderRoute: typeof CursosRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/sobre-mi': {
       id: '/sobre-mi'
       path: '/sobre-mi'
@@ -141,6 +134,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TerapiasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/videolibro': {
+      id: '/videolibro'
+      path: '/videolibro'
+      fullPath: '/videolibro'
+      preLoaderRoute: typeof VideolibroRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -148,9 +148,9 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CitasRoute: CitasRoute,
   ContactoRoute: ContactoRoute,
-  CursosRoute: CursosRoute,
   SobreMiRoute: SobreMiRoute,
   TerapiasRoute: TerapiasRoute,
+  VideolibroRoute: VideolibroRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
