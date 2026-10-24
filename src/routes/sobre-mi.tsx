@@ -1,25 +1,25 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 
-import portraitImg from "@/assets/dilan-portrait-clasped-v2.jpg.asset.json";
-import writingImg from "@/assets/dilan-writing.jpg.asset.json";
+import plantsImg from "@/assets/dilan-plants.jpg.asset.json";
+import tableImg from "@/assets/dilan-table.jpg.asset.json";
 
 export const Route = createFileRoute("/sobre-mi")({
   head: () => ({
     meta: [
-      { title: "Sobre mí | Dra. Gretchelle Dilán, Ph.D." },
+      { title: "Sobre mí | Psicoanalizar · Dra. Gretchelle Dilán, Ph.D." },
       {
         name: "description",
         content:
-          "Conoce a la Dra. Gretchelle Dilán: psicóloga, sexóloga, profesora universitaria, investigadora y mediadora certificada en Ponce, Puerto Rico.",
+          "La Dra. Gretchelle Dilán es psicóloga, sexóloga y terapeuta individual y de pareja con aproximadamente 20 años de experiencia. Doctorado en Psicología, posgrado en Sexología (Universidad de Barcelona) y Método Gottman niveles 1, 2 y 3.",
       },
       {
         property: "og:title",
-        content: "Sobre mí | Dra. Gretchelle Dilán, Ph.D.",
+        content: "Sobre mí | Psicoanalizar · Dra. Gretchelle Dilán, Ph.D.",
       },
       {
         property: "og:description",
         content:
-          "Psicóloga, sexóloga, profesora universitaria, investigadora y mediadora certificada. Ponce, Puerto Rico.",
+          "Psicóloga, sexóloga y terapeuta individual y de pareja. Fundadora de Psicoanalizar. Servicios exclusivamente en línea, Puerto Rico.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -34,84 +34,112 @@ const TIMELINE = [
     d: "Formación doctoral con especial atención a los vínculos y la salud emocional de las relaciones.",
   },
   {
-    t: "Post grado en Sexualidad · Universidad de Barcelona",
-    d: "Especialización en sexualidad humana en una de las universidades más reconocidas de Europa.",
+    t: "Posgrado en Sexología · Universidad de Barcelona",
+    d: "Formación de posgrado en sexualidad humana.",
   },
   {
-    t: "Certificación Gottman · Nivel 3",
-    d: "Entrenamiento clínico avanzado en el método Gottman para terapia de pareja, basado en décadas de investigación.",
+    t: "Método Gottman · Niveles 1, 2 y 3",
+    d: "Formación en los tres niveles del método para terapia de pareja.",
   },
   {
     t: "Licencia · Junta Examinadora de Psicólogos de Puerto Rico",
     d: "Ejercicio autorizado de la psicología bajo los estándares éticos y legales de Puerto Rico.",
   },
   {
-    t: "Mediadora certificada · Tribunal General de Justicia de PR",
-    d: "Certificación oficial para acompañar procesos de mediación, incluidos separación y divorcio.",
+    t: "Mediadora y árbitro del Tribunal de Puerto Rico",
+    d: "Acompaña procesos de mediación, incluidos separación y divorcio, y también es profesora y conferenciante.",
   },
   {
-    t: "17 años de consulta en línea",
-    d: "Una década y media acompañando procesos terapéuticos a distancia, desde antes de que fuera común.",
+    t: "Fundadora de Psicoanalizar",
+    d: "Un espacio dedicado a ayudar a las personas a comprender sus experiencias afectivas y desarrollar formas más saludables de vincularse.",
+  },
+  {
+    t: "Autora del videolibro “¿Me quedo o me voy de la relación?”",
+    d: "Contenido educativo sobre relaciones y decisiones conscientes, en siete capítulos.",
   },
 ];
 
 function SobreMi() {
   return (
     <div>
-      <section className="mx-auto max-w-6xl px-4 pb-16 pt-12 sm:px-6 md:pb-24 md:pt-20">
+      <section className="mx-auto max-w-6xl px-4 pb-14 pt-12 sm:px-6 md:pb-20 md:pt-20">
         <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
           Sobre mí
         </p>
         <h1 className="mt-4 max-w-2xl font-serif text-4xl leading-tight sm:text-5xl">
-          Psicóloga, sexóloga y, sobre todo, una aliada de tu relación
+          Comprender tus vínculos. Encontrar tu voz. Elegir tu camino.
         </h1>
       </section>
 
       <section className="mx-auto grid max-w-6xl items-start gap-10 px-4 sm:px-6 md:grid-cols-[0.9fr_1.1fr] md:gap-16">
-        <div>
+        <div className="md:sticky md:top-28">
           <img
-            src={portraitImg.url}
-            alt="Retrato de la Dra. Gretchelle Dilán"
+            src={plantsImg.url}
+            alt="Retrato de la Dra. Gretchelle Dilán entre plantas, con su collar rosa"
             loading="lazy"
+            width={853}
+            height={1280}
             className="w-full object-cover"
           />
           <p className="mt-4 text-center text-[0.65rem] uppercase tracking-[0.3em] text-muted-foreground">
-            Ponce, Puerto Rico · Consulta en línea
+            Consulta en línea · Puerto Rico
           </p>
         </div>
-        <div className="space-y-5 text-lg leading-relaxed text-muted-foreground">
+        <div className="space-y-5 leading-relaxed text-muted-foreground">
           <p>
-            Soy la Dra. Gretchelle Dilán, psicóloga y sexóloga especializada
-            en terapia de pareja. Mi consulta nace en Ponce, Puerto Rico, y
-            desde hace <strong className="text-foreground">17 años</strong>{" "}
-            acompaño a parejas y personas de todo el mundo a través de sesiones
-            en línea.
+            La Dra. Gretchelle Dilán es psicóloga, sexóloga y terapeuta
+            individual y de pareja con aproximadamente{" "}
+            <strong className="text-foreground">20 años de experiencia</strong>{" "}
+            profesional. Es fundadora de Psicoanalizar, un espacio dedicado a
+            ayudar a las personas a comprender sus experiencias afectivas,
+            afrontar dificultades en sus relaciones y desarrollar formas más
+            saludables de vincularse.
           </p>
           <p>
-            Mi trabajo se sostiene sobre tres pilares: la ciencia, con
-            terapia cognitivo conductual y terapias contemporáneas con bases
-            constructivistas; la formación continua, con un doctorado en
-            Psicología y un post grado en Sexualidad de la Universidad de
-            Barcelona; y la experiencia práctica, con la certificación Gottman
-            nivel 3 y la mediación certificada por el Tribunal General de
-            Justicia de Puerto Rico.
+            Cuenta con un doctorado en Psicología y formación de posgrado en
+            Sexología de la Universidad de Barcelona. Su preparación incluye los
+            niveles 1, 2 y 3 del Método Gottman para terapia de pareja. En su
+            práctica integra la terapia cognitivo-conductual, la Terapia de
+            Aceptación y Compromiso (ACT), el enfoque constructivista y
+            principios de la Terapia Relacional Imago, adaptando el proceso a
+            las necesidades y objetivos de cada persona o pareja.
           </p>
           <p>
-            Además de la consulta privada, soy profesora universitaria e
-            investigadora. Ese vínculo con la academia mantiene mi práctica
-            viva, actual y fundamentada en lo que la evidencia dice que
-            funciona.
+            Su trabajo se centra en los asuntos de las relaciones, tanto en
+            terapia individual como de pareja. Acompaña a adultos que enfrentan
+            dificultades de comunicación, infidelidad, pérdida de confianza,
+            dependencia emocional, celos, problemas con los límites, rupturas y
+            dudas sobre continuar o terminar una relación. Como sexóloga,
+            también atiende preocupaciones relacionadas con el deseo sexual, la
+            intimidad y el funcionamiento sexual.
           </p>
           <p>
-            Creo que las relaciones no se arreglan con fórmulas: se
-            reconstruyen con honestidad, herramientas y acompañamiento
-            respetuoso. Eso es lo que ofrezco en cada sesión.
+            En terapia individual, facilita la exploración de patrones
+            relacionales, la elaboración de experiencias dolorosas y el
+            fortalecimiento del autoconcepto y los límites dentro de los
+            vínculos. En terapia de pareja, ayuda a identificar los conflictos
+            recurrentes, expresar necesidades y trabajar en la conexión
+            emocional y sexual.
+          </p>
+          <p>
+            Además de su práctica terapéutica, es mediadora y árbitro del
+            Tribunal de Puerto Rico, profesora y conferenciante. También
+            desarrolla contenido educativo sobre salud mental, relaciones y
+            sexualidad, y es autora del videolibro “¿Me quedo o me voy de la
+            relación?”.
+          </p>
+          <p>
+            Desde Psicoanalizar, ofrece un espacio de escucha, reflexión y
+            acompañamiento para tomar decisiones conscientes y construir
+            relaciones más saludables. Los servicios terapéuticos se ofrecen
+            exclusivamente en línea para adultos que se encuentran físicamente
+            en Puerto Rico durante sus sesiones.
           </p>
           <Link
             to="/citas"
             className="mt-2 inline-block rounded-sm bg-primary px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-primary-foreground transition-colors hover:bg-primary/90"
           >
-            Agendar cita
+            Agenda tu cita
           </Link>
         </div>
       </section>
@@ -139,15 +167,17 @@ function SobreMi() {
       <section className="bg-secondary py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 md:grid-cols-2 md:gap-16">
           <img
-            src={writingImg.url}
-            alt="Dra. Dilán tomando notas clínicas"
+            src={tableImg.url}
+            alt="La Dra. Gretchelle Dilán sentada frente a la cámara, con su collar de destellos rosa"
             loading="lazy"
+            width={853}
+            height={1280}
             className="w-full object-cover"
           />
           <div>
             <h2 className="font-serif text-3xl leading-snug sm:text-4xl">
-              “Cada relación tiene su propia historia. Mi trabajo es ayudar a
-              escribirla de nuevo.”
+              “Un espacio de escucha, reflexión y acompañamiento para tomar
+              decisiones conscientes.”
             </h2>
             <p className="mt-4 text-[0.7rem] uppercase tracking-[0.3em] text-muted-foreground">
               Dra. Gretchelle Dilán
@@ -156,7 +186,7 @@ function SobreMi() {
               to="/terapias"
               className="mt-8 inline-flex items-center gap-2 text-xs uppercase tracking-[0.25em] text-primary transition-colors hover:text-primary/80"
             >
-              Ver las terapias
+              Ver los servicios
             </Link>
           </div>
         </div>
