@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
+import { Menu, X } from "lucide-react";
 
 const NAV = [
   { to: "/sobre-mi" as const, label: "Sobre mí" },
