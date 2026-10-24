@@ -10,4 +10,6 @@
 <!-- LOVABLE:END -->
 
 ## Site decisions
-- Dra. Dilán demo site: frontend-only demo (booking, contact and course-signup forms show success states client-side; no backend). Images are CDN assets via src/assets/*.asset.json pointers (not local binaries). Fonts loaded via <link> in __root head.
+- Dra. Dilán demo site: frontend-only demo (contact form shows success state client-side; no backend; no booking calendar). Images are CDN assets via src/assets/*.asset.json pointers (not local binaries). Fonts loaded via <link> in __root head.
+- Only the 2026 professional photo set (DSC015xx: dilan-hero-2026, dilan-plants, dilan-seated, dilan-glasses, dilan-table, dilan-lap, dilan-reading) and the psicoanalizar-seal.png logo may be used on the site, including favicon. The old screen-capture photos and old badge were removed by client request and must not reappear.
+- Brand: nav wordmark is the text "PSICOANALIZAR" (letterspaced serif); the seal is used in the footer. Hero uses a tight face crop of DSC01510 with a CSS ivory fade over its left edge (no image regeneration of client photos).
