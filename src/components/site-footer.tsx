@@ -61,13 +61,19 @@ export function SiteFooter() {
           <div className="flex items-center gap-3">
             <img
               src={logoBadge.url}
-              alt="Sello de Psicoanalizar · Dra. Gretchelle Dilán"
-              className="h-12 w-12 rounded-full bg-background/90 p-0.5"
+              alt="Sello de la Dra. Gretchelle Dilán"
+              className="h-14 w-14"
             />
-            <p className="font-serif text-base tracking-[0.25em]">
-              PSICOANALIZAR
-            </p>
+            <div>
+              <p className="text-sm uppercase tracking-[0.25em]">
+                Dra. Gretchelle Dilán
+              </p>
+              <p className="mt-1 text-xs text-background/60">
+                Psicóloga · Psicoanalizar
+              </p>
+            </div>
           </div>
+
           <p className="mt-4 text-sm leading-relaxed text-background/70">
             Espacio de la Dra. Gretchelle Dilán, psicóloga y sexóloga, para
             acompañar a personas y parejas a comprender sus dinámicas
