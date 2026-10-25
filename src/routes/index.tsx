@@ -1,8 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
 
-import heroImg from "@/assets/dilan-hero-2026.jpg.asset.json";
+import heroImg from "@/assets/dilan-plants.jpg.asset.json";
 import aboutImg from "@/assets/dilan-seated.jpg.asset.json";
 import videolibroImg from "@/assets/dilan-reading.jpg.asset.json";
+
 import { BookingCard } from "@/components/booking-card";
 import { WHATSAPP_URL } from "@/components/site-footer";
 import { THERAPIES } from "@/lib/therapies";
@@ -83,62 +85,81 @@ function Home() {
     <div>
       {/* Hero */}
       <section className="relative overflow-hidden">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 pb-10 pt-12 sm:px-6 md:grid-cols-[1.05fr_0.95fr] md:gap-8 md:pb-14 md:pt-20">
-          <div className="max-w-xl">
-            <p className="text-[0.65rem] uppercase tracking-[0.35em] text-primary">
+        {/* retrato a sangre con fundido hacia el fondo marfil (escritorio) */}
+        <div
+          aria-hidden
+          className="absolute inset-y-0 right-0 hidden w-[46%] md:block"
+        >
+          <img
+            src={heroImg.url}
+            alt=""
+            className="h-full w-full object-cover object-[50%_12%]"
+          />
+          <div className="absolute inset-y-0 left-0 w-3/5 bg-gradient-to-r from-background via-background/60 to-transparent" />
+        </div>
+
+        <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 md:pb-28 md:pt-32">
+          <div className="max-w-2xl">
+            <p className="text-[0.7rem] uppercase tracking-[0.35em] text-foreground">
               Dra. Gretchelle Dilán · Psicóloga
             </p>
-            <h1 className="mt-5 font-serif text-4xl leading-[1.15] sm:text-5xl md:text-[3.4rem]">
-              Comprender tus vínculos. Encontrar tu voz. Elegir tu camino.
+            <div aria-hidden className="mt-3 h-px w-10 bg-primary" />
+            <h1 className="mt-8 font-serif text-4xl leading-[1.12] sm:text-5xl lg:text-[3.4rem]">
+
+              <span className="block">Comprender tus vínculos.</span>
+              <span className="block">Encontrar tu voz.</span>
+              <span className="block">Elegir tu camino.</span>
             </h1>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-muted-foreground">
+            <p className="mt-7 text-lg leading-relaxed text-muted-foreground">
               Terapia individual y de pareja enfocada en las relaciones.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-9 flex flex-wrap gap-4">
               <Link
                 to="/terapias"
-                className="rounded-sm bg-foreground px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-background transition-opacity hover:opacity-85"
+                className="group inline-flex items-center gap-3 bg-foreground px-7 py-4 font-serif text-base text-background transition-opacity hover:opacity-85"
               >
                 Conoce mis servicios
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 to="/videolibro"
-                className="rounded-sm border border-border px-7 py-3.5 text-xs uppercase tracking-[0.25em] text-foreground transition-colors hover:border-primary/60"
+                className="group inline-flex items-center gap-3 border border-border bg-background px-7 py-4 font-serif text-base text-foreground transition-colors hover:border-primary/60"
               >
                 Lee mis escritos
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
-            <p className="mt-7 text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
+            <p className="mt-10 text-[0.7rem] uppercase tracking-[0.28em] text-muted-foreground">
               Únicamente en línea · Puerto Rico
             </p>
           </div>
+        </div>
 
-          <div className="relative">
-            <img
-              src={heroImg.url}
-              alt="Retrato de la Dra. Gretchelle Dilán"
-              width={520}
-              height={640}
-              className="w-full max-w-md justify-self-center object-cover md:max-w-none"
-            />
-            {/* fundido del fondo gris del estudio hacia el fondo de la página */}
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-y-0 left-0 w-1/2 bg-gradient-to-r from-background via-background/40 to-transparent md:-left-16 md:w-2/5"
-            />
-          </div>
+        {/* retrato en móvil, debajo del texto */}
+        <div className="relative md:hidden">
+          <img
+            src={heroImg.url}
+            alt="Retrato de la Dra. Gretchelle Dilán sentada en su consultorio"
+            className="h-[420px] w-full object-cover object-[50%_15%]"
+          />
+          <div
+            aria-hidden
+            className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-background to-transparent"
+          />
         </div>
       </section>
 
       {/* Desde mi consultorio */}
-      <section className="mx-auto max-w-3xl px-4 pb-14 pt-4 text-center sm:px-6">
-        <p className="text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">
+      <section className="mx-auto max-w-3xl px-4 pb-14 pt-12 text-center sm:px-6 md:pb-20">
+        <div aria-hidden className="mx-auto h-px w-10 bg-primary" />
+        <p className="mt-5 text-[0.65rem] uppercase tracking-[0.35em] text-muted-foreground">
           Desde mi consultorio
         </p>
         <p className="mt-4 font-serif text-2xl leading-snug text-foreground sm:text-3xl">
           Un espacio para pensar nuestras relaciones.
         </p>
       </section>
+
 
       {/* Credenciales */}
       <section className="border-y border-border bg-secondary">

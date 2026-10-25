@@ -2,6 +2,9 @@ import { useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 
+import sealLogo from "@/assets/psicoanalizar-seal.png.asset.json";
+
+
 const NAV = [
   { to: "/sobre-mi" as const, label: "Sobre mí" },
   { to: "/terapias" as const, label: "Terapias" },
@@ -26,16 +29,17 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 md:py-5">
         <Link
           to="/"
-          className="flex min-w-0 items-baseline gap-3"
+          aria-label="Inicio · Dra. Gretchelle Dilán"
+          className="flex shrink-0 items-center"
           onClick={() => setOpen(false)}
         >
-          <span className="truncate font-serif text-lg tracking-[0.35em] text-foreground sm:text-xl">
-            PSICOANALIZAR
-          </span>
-          <span className="hidden text-[0.6rem] uppercase tracking-[0.22em] text-muted-foreground lg:inline">
-            Dra. Gretchelle Dilán
-          </span>
+          <img
+            src={sealLogo.url}
+            alt="Sello de la Dra. Gretchelle Dilán · Psicoanalizar"
+            className="h-11 w-11 md:h-12 md:w-12"
+          />
         </Link>
+
 
         <nav className="hidden items-center gap-6 md:flex">
           {NAV.map((item) => (
