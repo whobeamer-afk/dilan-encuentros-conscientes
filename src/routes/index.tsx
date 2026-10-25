@@ -99,12 +99,13 @@ function Home() {
         </div>
 
         <div className="relative mx-auto max-w-6xl px-4 pb-16 pt-14 sm:px-6 md:pb-28 md:pt-32">
-          <div className="max-w-xl">
+          <div className="max-w-2xl">
             <p className="text-[0.7rem] uppercase tracking-[0.35em] text-foreground">
               Dra. Gretchelle Dilán · Psicóloga
             </p>
             <div aria-hidden className="mt-3 h-px w-10 bg-primary" />
-            <h1 className="mt-8 font-serif text-4xl leading-[1.12] sm:text-5xl md:text-[3.5rem]">
+            <h1 className="mt-8 font-serif text-4xl leading-[1.12] sm:text-5xl lg:text-[3.4rem]">
+
               <span className="block">Comprender tus vínculos.</span>
               <span className="block">Encontrar tu voz.</span>
               <span className="block">Elegir tu camino.</span>
